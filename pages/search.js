@@ -9,7 +9,8 @@ import SearchFilters from '../components/SearchFilters';
 import { baseUrl, fetchApi } from '../utils/fetchApi';
 import noresult from '../assets/image/noresult.svg'
 
-const Search = ({ properties }) => {
+const Search = ({ properties }) =>
+{
     const [searchFilters, setSearchFilters] = useState(false);
     const router = useRouter();
 
@@ -39,7 +40,7 @@ const Search = ({ properties }) => {
             </Flex>
             {properties.length === 0 && (
                 <Flex justifyContent='center' alignItems='center' flexDir='column' marginTop='5' marginBottom='5'>
-                    <Image src={noresult} />
+                    <Image src={noresult}  alt=""/>
                     <Text fontSize='xl' marginTop='3'>No Result Found.</Text>
                 </Flex>
             )}

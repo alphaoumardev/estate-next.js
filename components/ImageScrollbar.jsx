@@ -10,6 +10,7 @@ const LeftArrow = () => {
     return (
         <Flex justifyContent='center' alignItems='center' marginRight='1'>
             <Icon
+
                 as={FaArrowAltCircleLeft}
                 onClick={() => scrollPrev()}
                 fontSize='2xl'
@@ -39,8 +40,8 @@ export default function ImageScrollbar({ data }) {
     return (
         <ScrollMenu LeftArrow={LeftArrow} RightArrow={RightArrow} style={{ overflow: 'hidden' }} >
             {data.map((item) => (
-                <Box width='910px' itemId={item.id} overflow='hidden' p='1'>
-                    <Image placeholder="blur" blurDataURL={item.url} src={item.url} width={1000} height={500}  sizes="(max-width: 500px) 100px, (max-width: 1023px) 400px, 1000px" />
+                <Box width='910px' key={item.id} itemId={item.id} overflow='hidden' p='1'>
+                    <Image alt="" placeholder="blur" blurDataURL={item.url} src={item.url} width={1000} height={500}  sizes="(max-width: 500px) 100px, (max-width: 1023px) 400px, 1000px" />
                 </Box>
             ))}
         </ScrollMenu>
